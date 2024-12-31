@@ -197,7 +197,7 @@
     const inputPassword = prompt("Nhập mật khẩu để truy cập " + folder + ":");
     // Mã hóa mật khẩu nhập vào bằng MD5
     const hashedPassword = CryptoJS.MD5(inputPassword).toString();
-    const correctHashedPassword = "df0d7c42de21a4c87d7b11ee90fd4528"; // MD5 của "Huy2000@"
+    const correctHashedPassword = "df0d7c42de21a4c87d7b11ee90fd4528";
 
     if (hashedPassword === correctHashedPassword) {
       if (folder === "Hình ảnh") {
