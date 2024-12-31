@@ -157,7 +157,7 @@
     <h2>Trần Quốc Huy</h2>
     <div class="info"><strong>Information Technology</strong></div>
     <div class="info"><strong>Job:</strong> Cung cấp các dịch vụ theo yêu cầu người dùng trên các nền tảng mạng xã hội(
-      Zalo, Facbook, Intafram, Tiktok,...), lưu trữ hệ thống, tự động hóa công việc, các ứng dụng trên máy tính, bán các
+      Zalo, Facbook, Intasgram, Tiktok,...), lưu trữ hệ thống, tự động hóa công việc, các ứng dụng trên máy tính, bán các
       phần mềm làm việc,...</div>
     <div class="info"><strong>Địa chỉ:</strong> Hưng Mỹ - Châu Thành - Trà Vinh</div>
     <div class="btn-container">
@@ -191,22 +191,28 @@
     </a>
   </div>
 
-  <script>
-    function promptPassword(folder) {
-      const password = prompt("Nhập mật khẩu để truy cập " + folder + ":");
-      if (password === "Huy2000@") {
-        if (folder === "Hình ảnh") {
-          window.location.href = "https://drive.google.com/drive/folders/1KK-9xZ6fbhcTG8IYBj0pqcYwZB1nrm8b?usp=sharing";
-        } else if (folder === "App") {
-          window.location.href = "https://drive.google.com/drive/folders/1yjE6rIQQkjRJ6TcwDfw0ZF_KJnGiOG5Z?usp=sharing";
-        } else if (folder === "Tool") {
-          window.location.href = "https://drive.google.com/drive/folders/1cy1xhXBYzDSWK8yOpowzUA4SHq0Nrkbt?usp=sharing";
-        }
-      } else {
-        alert("Mật khẩu không đúng!");
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+  function promptPassword(folder) {
+    const inputPassword = prompt("Nhập mật khẩu để truy cập " + folder + ":");
+    // Mã hóa mật khẩu nhập vào bằng MD5
+    const hashedPassword = CryptoJS.MD5(inputPassword).toString();
+    const correctHashedPassword = "df0d7c42de21a4c87d7b11ee90fd4528"; // MD5 của "Huy2000@"
+
+    if (hashedPassword === correctHashedPassword) {
+      if (folder === "Hình ảnh") {
+        window.location.href = "https://drive.google.com/drive/folders/1KK-9xZ6fbhcTG8IYBj0pqcYwZB1nrm8b?usp=sharing";
+      } else if (folder === "App") {
+        window.location.href = "https://drive.google.com/drive/folders/1yjE6rIQQkjRJ6TcwDfw0ZF_KJnGiOG5Z?usp=sharing";
+      } else if (folder === "Tool") {
+        window.location.href = "https://drive.google.com/drive/folders/1cy1xhXBYzDSWK8yOpowzUA4SHq0Nrkbt?usp=sharing";
       }
-    } 
-  </script>
+    } else {
+      alert("Mật khẩu không đúng!");
+    }
+  }
+</script>
+
 </body>
 
 </html>
