@@ -191,27 +191,22 @@
     </a>
   </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <script>
-  function promptPassword(folder) {
-    const inputPassword = prompt("Nhập mật khẩu để truy cập " + folder + ":");
-    // Mã hóa mật khẩu nhập vào bằng MD5
-    const hashedPassword = CryptoJS.MD5(inputPassword).toString();
-    const correctHashedPassword = "df0d7c42de21a4c87d7b11ee90fd4528";
-
-    if (hashedPassword === correctHashedPassword) {
-      if (folder === "Hình ảnh") {
-        window.location.href = "https://drive.google.com/drive/folders/1KK-9xZ6fbhcTG8IYBj0pqcYwZB1nrm8b?usp=sharing";
-      } else if (folder === "App") {
-        window.location.href = "https://drive.google.com/drive/folders/1yjE6rIQQkjRJ6TcwDfw0ZF_KJnGiOG5Z?usp=sharing";
-      } else if (folder === "Tool") {
-        window.location.href = "https://drive.google.com/drive/folders/1cy1xhXBYzDSWK8yOpowzUA4SHq0Nrkbt?usp=sharing";
+    function promptPassword(folder) {
+      const password = prompt("Nhập mật khẩu để truy cập " + folder + ":");
+      if (password === "Huy2000@") {
+        if (folder === "Hình ảnh") {
+          window.location.href = "https://drive.google.com/drive/folders/1KK-9xZ6fbhcTG8IYBj0pqcYwZB1nrm8b?usp=sharing";
+        } else if (folder === "App") {
+          window.location.href = "https://drive.google.com/drive/folders/1yjE6rIQQkjRJ6TcwDfw0ZF_KJnGiOG5Z?usp=sharing";
+        } else if (folder === "Tool") {
+          window.location.href = "https://drive.google.com/drive/folders/1cy1xhXBYzDSWK8yOpowzUA4SHq0Nrkbt?usp=sharing";
+        }
+      } else {
+        alert("Mật khẩu không đúng!");
       }
-    } else {
-      alert("Mật khẩu không đúng!");
-    }
-  }
-</script>
+    } 
+  </script>
 
 </body>
 
